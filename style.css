@@ -229,3 +229,31 @@ textarea {
 .sort-button:hover {
   background-color: #4338ca;
 }
+.summary-button {
+  margin-bottom: 12px;
+  background-color: #9333ea;
+}
+
+.summary-button:hover {
+  background-color: #7e22ce;
+}
+
+.ai-summary-box {
+  background-color: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.ai-summary-box h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #5b21b6;
+}
+
+.ai-summary-box p {
+  margin: 0;
+  line-height: 1.6;
+  color: #333;
+}
