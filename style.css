@@ -215,3 +215,9 @@ select,
 textarea {
   font-size: 16px;
 }
+/* iPhoneの入力時ズーム対策 */
+input,
+select,
+textarea {
+  font-size: 16px !important;
+}
