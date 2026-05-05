@@ -5,6 +5,8 @@ const deadlineInput = document.getElementById("deadline");
 const statusInput = document.getElementById("status");
 const memoInput = document.getElementById("memo");
 const addButton = document.getElementById("addButton");
+const summaryButton = document.getElementById("summaryButton");
+const summaryResult = document.getElementById("summaryResult");
 const companyList = document.getElementById("companyList");
 const companyCount = document.getElementById("companyCount");
 const nearestDeadline = document.getElementById("nearestDeadline");
@@ -20,6 +22,17 @@ let editingIndex = -1;
 
 // ページを開いたときに企業一覧を表示する
 displayCompanies();
+// メモを要約するボタンが押されたときの処理
+summaryButton.addEventListener("click", function () {
+  const memo = memoInput.value;
+
+  if (memo === "") {
+    alert("要約するメモを入力してください");
+    return;
+  }
+
+  summaryResult.textContent = createTemporarySummary(memo);
+});
 // 締切順に並び替えボタンが押されたときの処理
 sortButton.addEventListener("click", function () {
   companies.sort(function (a, b) {
@@ -207,4 +220,14 @@ function getStatusClass(status) {
   } else {
     return "status-plan";
   }
+}
+// 仮のAI要約を作る関数
+function createTemporarySummary(memo) {
+  if (memo.length <= 60) {
+    return "メモが短いため、そのまま確認しやすい内容です：" + memo;
+  }
+
+  const shortMemo = memo.slice(0, 60);
+
+  return "この企業メモは、主に「" + shortMemo + "…」という内容です。志望理由や面接準備に使えるよう、企業の特徴・興味を持った理由・次に確認したい点に分けて整理するとよさそうです。";
 }
