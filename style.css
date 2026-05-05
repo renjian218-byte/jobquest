@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: sans-serif;
@@ -138,4 +141,71 @@ button:hover {
 
 .edit-button:hover {
   background-color: #059669;
+}
+/* スマホ対応 */
+@media (max-width: 600px) {
+  .app {
+    margin: 0;
+    padding: 16px;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .summary-box,
+  .form-section,
+  .list-section {
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    font-size: 16px;
+  }
+
+  textarea {
+    height: 120px;
+  }
+
+  .company-card {
+    padding: 14px;
+    border-radius: 10px;
+  }
+
+  .company-card h3 {
+    font-size: 20px;
+  }
+
+  .company-card p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .edit-button,
+  .delete-button {
+    width: 100%;
+    margin-top: 8px;
+  }
+}
+.edit-button,
+.delete-button {
+  margin-top: 10px;
+}
+
+.edit-button {
+  margin-bottom: 8px;
 }
