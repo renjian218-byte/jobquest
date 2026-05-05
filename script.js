@@ -8,6 +8,7 @@ const addButton = document.getElementById("addButton");
 const companyList = document.getElementById("companyList");
 const companyCount = document.getElementById("companyCount");
 const nearestDeadline = document.getElementById("nearestDeadline");
+const sortButton = document.getElementById("sortButton");
 
 // 保存されている企業データを読み込む
 let companies = JSON.parse(localStorage.getItem("companies")) || [];
@@ -19,6 +20,19 @@ let editingIndex = -1;
 
 // ページを開いたときに企業一覧を表示する
 displayCompanies();
+// 締切順に並び替えボタンが押されたときの処理
+sortButton.addEventListener("click", function () {
+  companies.sort(function (a, b) {
+    // 締切が空の企業は後ろにする
+    if (a.deadline === "") return 1;
+    if (b.deadline === "") return -1;
+
+    return new Date(a.deadline) - new Date(b.deadline);
+  });
+
+  saveCompanies();
+  displayCompanies();
+});
 
 // 追加・更新ボタンが押されたときの処理
 addButton.addEventListener("click", function () {
