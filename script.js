@@ -32,17 +32,6 @@ sortButton.addEventListener("click", function () {
 
   saveCompanies();
   displayCompanies();
-  sortButton.addEventListener("click", function () {
-  companies.sort(function (a, b) {
-    if (a.deadline === "") return 1;
-    if (b.deadline === "") return -1;
-
-    return new Date(a.deadline) - new Date(b.deadline);
-  });
-
-  saveCompanies();
-  displayCompanies();
-});
 });
 
 // 追加・更新ボタンが押されたときの処理
