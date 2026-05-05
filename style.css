@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f3f4f6;
+  color: #333;
+}
+
+.app {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 24px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 32px;
+}
+
+.form-section,
+.list-section {
+  background-color: white;
+  padding: 24px;
+  margin-bottom: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+  margin-top: 0;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+.company-card {
+  background-color: #f9fafb;
+  padding: 16px;
+  margin-bottom: 12px;
+  border-left: 6px solid #2563eb;
+  border-radius: 12px;
+}
+
+.company-card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.company-card p {
+  margin: 4px 0;
+}
+
+.delete-button {
+  margin-top: 12px;
+  background-color: #dc2626;
+}
+
+.delete-button:hover {
+  background-color: #b91c1c;
+}
+.summary-box {
+  background-color: white;
+  padding: 16px;
+  margin-bottom: 24px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-size: 18px;
+  font-weight: bold;
+}
+.status-plan {
+  border-left-color: #2563eb;
+}
+
+.status-prepare {
+  border-left-color: #f59e0b;
+}
+
+.status-submitted {
+  border-left-color: #7c3aed;
+}
+
+.status-first {
+  border-left-color: #ea580c;
+}
+
+.status-final {
+  border-left-color: #dc2626;
+}
+
+.status-offer {
+  border-left-color: #16a34a;
+}
+
+.status-rejected {
+  border-left-color: #6b7280;
+}
+.edit-button {
+  margin-top: 12px;
+  margin-bottom: 8px;
+  background-color: #10b981;
+}
+
+.edit-button:hover {
+  background-color: #059669;
+}

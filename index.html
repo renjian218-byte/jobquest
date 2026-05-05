@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>JobQuest - 就活タスク管理アプリ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <h1>JobQuest</h1>
+    <p class="subtitle">就活の企業・締切・選考状況をまとめて管理しよう</p>
+    <div class="summary-box">
+  <p>登録企業数：<span id="companyCount">0</span>社</p>
+  <p>締切が近い企業：<span id="nearestDeadline">まだありません</span></p>
+</div>
+
+    <section class="form-section">
+      <h2>企業を追加</h2>
+
+      <input type="text" id="companyName" placeholder="企業名">
+      <input type="text" id="industry" placeholder="業界">
+      <input type="date" id="deadline">
+
+      <select id="status">
+        <option value="応募予定">応募予定</option>
+        <option value="ES準備中">ES準備中</option>
+        <option value="ES提出済み">ES提出済み</option>
+        <option value="一次面接">一次面接</option>
+        <option value="最終面接">最終面接</option>
+        <option value="内定">内定</option>
+        <option value="不合格">不合格</option>
+      </select>
+
+      <textarea id="memo" placeholder="メモ・志望理由・面接で聞かれたこと"></textarea>
+
+      <button id="addButton">追加する</button>
+    </section>
+
+    <section class="list-section">
+      <h2>企業一覧</h2>
+      <div id="companyList"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
