@@ -209,3 +209,9 @@ button:hover {
 .edit-button {
   margin-bottom: 8px;
 }
+/* iPhoneで入力欄をタップしたときの自動ズーム対策 */
+input,
+select,
+textarea {
+  font-size: 16px;
+}
