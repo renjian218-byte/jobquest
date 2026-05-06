@@ -11,6 +11,8 @@ const companyList = document.getElementById("companyList");
 const companyCount = document.getElementById("companyCount");
 const nearestDeadline = document.getElementById("nearestDeadline");
 const sortButton = document.getElementById("sortButton");
+const searchInput = document.getElementById("searchInput");
+const statusFilter = document.getElementById("statusFilter");
 
 // 保存されている企業データを読み込む
 let companies = JSON.parse(localStorage.getItem("companies")) || [];
@@ -46,6 +48,9 @@ sortButton.addEventListener("click", function () {
   saveCompanies();
   displayCompanies();
 });
+// 検索入力とフィルター変更時の処理
+searchInput.addEventListener("input", displayCompanies);
+statusFilter.addEventListener("change", displayCompanies);
 
 // 追加・更新ボタンが押されたときの処理
 addButton.addEventListener("click", function () {
@@ -101,7 +106,19 @@ function displayCompanies() {
   companyCount.textContent = companies.length;
   showNearestDeadline();
 
-  companies.forEach(function (company, index) {
+  // 検索とフィルターの条件を取得
+  const searchTerm = searchInput.value.toLowerCase();
+  const statusFilterValue = statusFilter.value;
+
+  // 条件に合う企業だけをフィルタリング
+  const filteredCompanies = companies.filter(function (company) {
+    const matchesSearch = company.name.toLowerCase().includes(searchTerm);
+    const matchesStatus = statusFilterValue === "" || company.status === statusFilterValue;
+    return matchesSearch && matchesStatus;
+  });
+
+  filteredCompanies.forEach(function (company) {
+    const originalIndex = companies.indexOf(company);
     const card = document.createElement("div");
     card.className = "company-card";
     card.classList.add(getStatusClass(company.status));
@@ -112,8 +129,8 @@ function displayCompanies() {
       <p><strong>ES締切：</strong>${company.deadline}</p>
       <p><strong>選考状況：</strong>${company.status}</p>
       <p><strong>メモ：</strong>${company.memo}</p>
-      <button class="edit-button" onclick="editCompany(${index})">編集</button>
-      <button class="delete-button" onclick="deleteCompany(${index})">削除</button>
+      <button class="edit-button" onclick="editCompany(${originalIndex})">編集</button>
+      <button class="delete-button" onclick="deleteCompany(${originalIndex})">削除</button>
     `;
 
     companyList.appendChild(card);

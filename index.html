@@ -45,6 +45,17 @@
 
     <section class="list-section">
       <h2>企業一覧</h2>
+      <input type="text" id="searchInput" placeholder="企業名で検索">
+      <select id="statusFilter">
+        <option value="">全ての選考状況</option>
+        <option value="応募予定">応募予定</option>
+        <option value="ES準備中">ES準備中</option>
+        <option value="ES提出済み">ES提出済み</option>
+        <option value="一次面接">一次面接</option>
+        <option value="最終面接">最終面接</option>
+        <option value="内定">内定</option>
+        <option value="不合格">不合格</option>
+      </select>
       <button id="sortButton" class="sort-button">締切順に並び替え</button>
       <div id="companyList"></div>
     </section>
